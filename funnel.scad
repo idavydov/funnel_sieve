@@ -1,6 +1,6 @@
 module funnel(r1, h1, r2, h2, h3) {
     union() {
-       cylinder(h=h1+1, r=r1);
+       translate([0, 0, -1]) cylinder(h=h1+1, r=r1);
        translate([0, 0, h1]) cylinder(h=h2, r1=r1, r2=r2);
        translate([0, 0, h1 + h2 - 1]) cylinder(h=h3+1, r=r2);
     }
