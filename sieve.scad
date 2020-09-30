@@ -84,23 +84,22 @@ module mesh(triangles, width=0.5) {
  }
 
 
-$fn = 60;
+$fn = 120;
 
-r = 55;
+r = 52;
 
 start_triangles = [
     for (i = [0:9]) start_triangle(i)
 ];
 
-triangles  = subdivide_n(start_triangles, 6);
+triangles  = subdivide_n(start_triangles, 7);
 
 intersection() {
-   cylinder(h=3, r=50);
-   translate([0, 0, 1]) linear_extrude(height=1) mesh(triangles);
+   cylinder(h=1.5, r=49.5);
+   linear_extrude(height=1.5) mesh(triangles);
 }
 
 difference() {
-  cylinder(h=50, r=50);
-  translate([0, 0, -1]) cylinder(h=52, r=49);
+  cylinder(h=50, r=49.5);
+  translate([0, 0, -1]) cylinder(h=52, r=47.5);
 }
-
