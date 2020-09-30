@@ -6,13 +6,13 @@ module funnel(r1, h1, r2, h2, h3) {
     }
 }
 
-module empty_funnel(r1, h1, r2, h2, h3, thickness=1) {
+module empty_funnel(r1, h1, r2, h2, h3, thickness=2) {
     difference() {
         funnel(r1, h1, r2, h2, h3);
         translate([0, 0, -1]) funnel(r1 - thickness, h1 + 1, r2 - thickness, h2, h3 + 1);
     }
 }
 
-$fn = 60;
+$fn = 120;
 
 empty_funnel(52, 20, 10, 60, 30);
