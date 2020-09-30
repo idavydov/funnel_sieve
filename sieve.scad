@@ -67,7 +67,7 @@ function subdivide_n(l, n) =
             n == 0 ? l : subdivide_n(subdivide(l), n-1);
 
 
-module mesh(triangles) {
+module mesh(triangles, width=0.5) {
     for (tr = triangles)
         let (
             color = tr[0],
@@ -77,9 +77,9 @@ module mesh(triangles) {
         )
             {
                 if ( color == 0 )
-                    color("green") polyline(points = [B, A, C], width=0.7);
+                    polyline(points = [B, A, C], width=width);
                 else
-                    color("red") polyline(points = [B, A, C], width=0.7);
+                    polyline(points = [B, A, C], width=width);
             }
  }
 
